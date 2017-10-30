@@ -331,9 +331,15 @@ end
 fmin = handles.metricdata.fmin;
 fmax = handles.metricdata.fmax;
 
-fprintf('Calculating goodness-of-fit scores...  ');
-gofScores(meas,simu,fmin,fmax,[1 1 1 1],[1 1 1],4,'n');
-fprintf('done.\n');
+fprintf('Calculating goodness-of-fit scores...  \n\n');
+[scores,avg_score] = gofScores(meas,simu,fmin,fmax,[1 1 1 1],[1 1 1],4,'n');
+fprintf('Individual scores:\n')
+fprintf('  S1 = %5.1f, S2 = %5.1f\n',scores(1),scores(2));
+fprintf('  S3 = %5.1f, S4 = %5.1f\n',scores(3),scores(4));
+fprintf('  S5 = %5.1f, S6 = %5.1f\n',scores(5),scores(6));
+fprintf('  S7 = %5.1f, S8 = %5.1f\n',scores(7),scores(8));
+fprintf('  S9 = %5.1f\n',scores(9));
+fprintf('Average score = %.1f\n',avg_score);
 
 
 % --- Executes on button press in pushbutton4_close_all.

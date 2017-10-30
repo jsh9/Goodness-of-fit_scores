@@ -90,12 +90,13 @@ if plot_options(4) == 1
     xLeft = (16-width)/2;  yBottom = (10-height)/2;
     set(fh,'units','inches','position',[xLeft, yBottom, width, height]);
     plot(1:1:9,[c1,c2,c3,c4,c5,c6,c7,c8,c9],'bo','linewidth',2); hold on;
-    plot([1,9],[weighted_avg,weighted_avg],'r--','linewidth',2);
+    plot([1,9],[average,average],'r--','linewidth',2);
     ylim([-10 10]);
     set(gca,'yTick',-10:1:10);
     set(gca,'xTickLabel',{'Ia-duration','Ie-duration','Ia-peak','Ie-peak','PGA','PGV','PGD','Resp. Spect.','Fourier Spect.','STFT'},...
-        'fontname','Times New Roman');
+        'fontname','Times New Roman','fontsize',14);
     grid on;
+    legend('Individual score','Average score','location','best');
 end
 
 end
