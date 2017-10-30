@@ -20,15 +20,15 @@ There are two `.txt` files (`FKSH141103111446.measurement.txt` and `FKSH14110311
 
 After clicking "Calculate Scores", four figures will pop out, which are comparisons and scores of the simulated time history and the measured time history.
 
-![S1-S4](C:\Users\Jian\Documents\GitHub\Goodness-of-fit_scores\screenshots\S1-S4.png)
+![S1-S4](./screenshots/S1-S4.png)
 
-![S5-S7](C:\Users\Jian\Documents\GitHub\Goodness-of-fit_scores\screenshots\S5-S7.png)
+![S5-S7](./screenshots/S5-S7.png)
 
-![S8-S9](C:\Users\Jian\Documents\GitHub\Goodness-of-fit_scores\screenshots\S8-S9.png)
+![S8-S9](./screenshots/S8-S9.png)
 
 The last figure shows each individual score (S1 to S9) as well as the average score (red dash line). The close the red line to zero, the better the prediction.
 
-![Overall_score](C:\Users\Jian\Documents\GitHub\Goodness-of-fit_scores\screenshots\Overall_score.png)
+![Overall_score](./screenshots/Overall_score.png)
 
 The score values are also displayed on the command window of MATLAB.
 
