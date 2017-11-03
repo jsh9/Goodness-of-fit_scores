@@ -61,7 +61,8 @@ guidata(hObject, handles);
 % UIWAIT makes GofScoresGUI wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
-addpath('./lib');  % let MATLAB search in ./lib for all necessary subroutines
+current_dir = fileparts(mfilename('fullpath'));  % get directory of current m file
+addpath(fullfile(current_dir,'lib'));  % let MATLAB search in ./lib for all necessary subroutines
 
 % When this property is set to 1, this GUI will stays open even if "close
 % all" command is executed.
