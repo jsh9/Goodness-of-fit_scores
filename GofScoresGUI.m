@@ -329,11 +329,30 @@ switch handles.metricdata.simu_unit
         simu(:,2) = simu(:,2) * 9.81;
 end
 
+dt_meas = meas(2,1) - meas(1,1);
+dt_simu = simu(2,1) - simu(1,1);
+
+if dt_meas > dt_simu
+    meas_ = meas;
+    simu_ = [meas(:,1), interp1(simu(:,1),simu(:,2),meas(:,1))];  % downsample
+elseif dt_meas < dt_simu
+    simu_ = simu;
+    meas_ = [simu(:,1), interp1(meas(:,1),meas(:,2),simu(:,1))];  % downsample
+else
+    meas_ = meas;
+    simu_ = simu;
+end
+
 fmin = handles.metricdata.fmin;
 fmax = handles.metricdata.fmax;
 
+if fmin <= 0
+    fprintf('****  Warning: f_min value is invalid; using 0.1 Hz instead.   ***\n');
+    fmin = 0.1;
+end
+
 fprintf('Calculating goodness-of-fit scores...  \n\n');
-[scores,avg_score] = gofScores(meas,simu,fmin,fmax,[1 1 1 1],[1 1 1],4,'n');
+[scores,avg_score] = gofScores(meas_,simu_,fmin,fmax,[1 1 1 1],[1 1 1],4,'n');
 fprintf('Individual scores:\n')
 fprintf('  S1 = %5.1f, S2 = %5.1f\n',scores(1),scores(2));
 fprintf('  S3 = %5.1f, S4 = %5.1f\n',scores(3),scores(4));
