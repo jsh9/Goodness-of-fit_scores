@@ -20,9 +20,8 @@ function [scores,average,weighted_avg,fhs] = ...
 %                 summary, will be displayed respectively. Default is [0,
 %                 0, 0, 0]
 %    baseline_options: Whether or not to perform baseline correction for
-%                      each of the three groups (i.e., scores 1-4, scores
-%                      5-7, and scores 8-9). This should be a 3-element
-%                      vectore. Default is [1, 1, 1].
+%                      scores 5-7 and scores 8-9. This should be a 
+%                      3-element vector. Default is [1, 1].
 %                      Please do not change this default unless you really
 %                      know what you are doing.
 %    filter_order: The order of band pass filter to be performed to both
@@ -52,7 +51,7 @@ function [scores,average,weighted_avg,fhs] = ...
 
 if nargin < 8, exact_resp_spect = 'y'; end
 if nargin < 7, filter_order = 4; end
-if nargin < 6, baseline_options = [1 1 1]; end
+if nargin < 6, baseline_options = [1 1]; end
 if nargin < 5, plot_options = [0 0 0 0]; end
 
 if size(measurement,2) ~= size(simulation,2)

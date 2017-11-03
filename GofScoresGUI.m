@@ -352,7 +352,7 @@ if fmin <= 0
 end
 
 fprintf('Calculating goodness-of-fit scores...  \n\n');
-[scores,avg_score] = gofScores(meas_,simu_,fmin,fmax,[1 1 1 1],[1 1 1],4,'n');
+[scores,avg_score] = gofScores(meas_,simu_,fmin,fmax,[1 1 1 1],[1 1],4,'n');
 fprintf('Individual scores:\n')
 fprintf('  S1 = %5.1f, S2 = %5.1f\n',scores(1),scores(2));
 fprintf('  S3 = %5.1f, S4 = %5.1f\n',scores(3),scores(4));
