@@ -21,7 +21,7 @@ function [scores,average,weighted_avg,fhs] = ...
 %                 0, 0, 0]
 %    baseline_options: Whether or not to perform baseline correction for
 %                      scores 5-7 and scores 8-9. This should be a 
-%                      3-element vector. Default is [1, 1].
+%                      two-element vector. Default is [1, 1].
 %                      Please do not change this default unless you really
 %                      know what you are doing.
 %    filter_order: The order of band pass filter to be performed to both
