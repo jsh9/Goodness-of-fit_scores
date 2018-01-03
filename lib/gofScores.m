@@ -29,7 +29,7 @@ function [scores,average,weighted_avg,fhs] = ...
 %                  change this default unless you really know what you are
 %                  doing.
 %    exact_resp_spect: Whether or not to use exact response spectra
-%                      calculater (slower) as opposed to approximate
+%                      calculator (slower) as opposed to approximate
 %                      response spectra calculator (faster). Default: 'y'.
 %
 % [OUTPUTS]
